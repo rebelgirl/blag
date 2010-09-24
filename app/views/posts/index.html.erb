@@ -1,27 +1,32 @@
-<h1>Listing posts</h1>
+<div id="wrapper">
+<h1>Baby Steps</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<p>Taking my first step into unchartered territories. The first step is always the scariest but once you take it, you're in for an adventure.</p>
 
+<hr />
+
+<div id="leftcolumn">
+<pre>
+menu link 1
+
+menu link 2
+
+menu link 3
+</pre>
+</div>
+
+<div id="rightcolumn">
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <h3><%= post.title %></h3>
+  <%= post.content %>
+  <br />
+  <br />
+  <%= link_to 'Edit', edit_post_path(post) %> | 
+  <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+  <hr />
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Post', new_post_path %>
+</div>
+</div>
